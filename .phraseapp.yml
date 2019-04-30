@@ -1,0 +1,13 @@
+phraseapp:
+  project_id: "" 
+  file_format: "i18next"
+  push:
+    sources:
+      - file: "./src/i18n/en-GB/translations.json"
+        params:
+          locale_id: "" #Populate with English language locale ID.
+  pull:
+    targets:
+      - file: "./src/i18n/en-GB/translations.json"
+        params:
+          locale_id: "" #Populate with English language locale ID.

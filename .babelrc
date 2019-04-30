@@ -1,0 +1,17 @@
+{
+  "presets": ["@fashiontrade/ft-react-app"],
+  "env": {
+    "production": {
+      "only": [
+        "src"
+      ]
+    },
+    "test": {
+      "plugins": [
+        "require-context-hook",
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol preserveAspectRatio="xMidYMid" id="icon-caret-down">
+    <title>caret-down</title>
+    <path d="M7 7.707L.888.185a.5.5 0 1 0-.776.63l6.5 8a.5.5 0 0 0 .776 0l6.5-8a.5.5 0 1 0-.776-.63L7 7.707z" />
+  </symbol>
+  <symbol preserveAspectRatio="xMidYMid" id="icon-caret-selected">
+    <title>caret-selected</title>
+    <path d="M10.112.185a.5.5 0 0 1 .776.63l-6.5 8a.5.5 0 0 1-.764.014l-3.5-4a.5.5 0 0 1 .752-.658l3.11 3.554 6.126-7.54z" fill-rule="nonzero" />
+  </symbol>
+  <symbol preserveAspectRatio="xMidYMid" id="icon-vertical-menu">
+    <title>vertical-menu</title>
+    <circle cx="2.5" cy="18.5" r="2.5" />
+    <circle cx="2.5" cy="10.5" r="2.5" />
+    <circle cx="2.5" cy="2.5" r="2.5" />
+  </symbol>
+</svg>
