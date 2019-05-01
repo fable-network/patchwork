@@ -1,57 +1,42 @@
 {
-  "name": "patchwork",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "name": "@fashiontrade/patchwork",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "prop-types": ">=15.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@fashiontrade/eslint-config-ft-react-app": "^0.5.0",
     "@fashiontrade/ft-react-scripts": "0.7.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "@fashiontrade/wardrobe": "^3.4.0",
-    "@sentry/browser": "4.4.1",
-    "axios": "0.18.0",
-    "i18next": "14.0.1",
-    "i18next-xhr-backend": "1.5.1",
-    "jest": "23.6.0",
-    "moment": "2.22.2",
+    "eslint-plugin-prettier": "2.6.2",
+    "prettier": "1.17.0",
     "prop-types": "15.6.2",
-    "qs": "6.5.2",
-    "react-i18next": "7.11.1",
-    "react-redux": "5.0.7",
-    "redux": "4.0.0",
-    "styled-components": "3.3.3"
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6",
+    "webpack-cli": "3.3.1",
+    "webpack-node-externals": "1.7.2"
   },
   "scripts": {
-    "start": "yarn generate-settings && react-scripts start",
-    "build": "react-scripts build",
-    "test": "NODE_ENV=test jest",
+    "start": "react-scripts start",
+    "prepublishOnly": "yarn lint && yarn build",
+    "build": "rm -rf dist && NODE_ENV=production webpack --mode=production --config webpack.production.config.js",
     "lint-staged": "lint-staged",
-    "lint": "eslint src",
-    "eject": "react-scripts eject",
-    "update-snapshots": "NODE_ENV=test jest --updateSnapshot",
-    "generate-settings": "FT_ENVIRONMENT=dev python3 tools/settings-generator.py public/settings.js --disable-sentry",
-    "i18n:phraseapp": "export $(cat .env | grep -i PHRASEAPP_ACCESS_TOKEN) && phraseapp",
-    "i18n:push": "yarn i18n:phraseapp push --wait",
-    "i18n:pull": "yarn i18n:phraseapp pull"
+    "lint": "eslint src"
   },
   "pre-commit": [
     "lint-staged",
-    "lint",
-    "test"
+    "lint"
   ],
   "lint-staged": {
     "*.{js,scss,md}": [
       "prettier --write",
       "git add"
     ]
-  },
-  "devDependencies": {
-    "@fashiontrade/eslint-config-ft-react-app": "^0.5.0",
-    "enzyme": "3.8.0",
-    "jest": "23.6.0",
-    "jest-styled-components": "6.0.1",
-    "pre-commit": "1.2.2",
-    "react-hot-loader": "4.7.1",
-    "redux-devtools-extension": "2.13.8"
   },
   "browserslist": [
     ">0.2%",
