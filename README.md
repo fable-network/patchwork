@@ -12,6 +12,7 @@ import { registerManifest } from '@fashiontrade/patchwork';
 
 const manifest = {
   childApp: 'http://localhost:5000/index.js',
+  anotherChildApp: 'http://localhost:4000/index.js',
 };
 registerManifest(manifest) // called at the very top level of your parent app.
 ...
