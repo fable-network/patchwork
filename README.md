@@ -46,11 +46,13 @@ function bootstrap() {
 }
 
 function mount(node, basePath, props) {
+  // whatever you want to do when mounting here.
   ReactDOM.render(<App basePath={basePath} {...props} />, node);
   return Promise.resolve();
 }
 
 function unmount() {
+  // Whatever you want to do before unmounting here.
   return Promise.resolve();
 }
 
