@@ -32,11 +32,9 @@ import PatchworkComponent from '@fashiontrade/patchwork';
 ### Registering a child app and it's components
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
+...
 import { registerComponent } from '@fashiontrade/patchwork';
-import App from './App';
-import AddToCartButton from './components/AddToCartButton';
+...
 
 function bootstrap() {
   return Promise.resolve({
