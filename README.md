@@ -78,3 +78,7 @@ import PatchworkComponent from '@fashiontrade/patchwork';
 ...
 
 ```
+
+## Additional info
+
+A similar setup with Single-SPA: https://gitlab.com/TheMcMurder/single-spa-portal-example/tree/master
