@@ -79,6 +79,16 @@ import PatchworkComponent from '@fashiontrade/patchwork';
 
 ```
 
+## Setting up a new client app
+
+Things to consider:
+
+- Changing a default development PORT
+- Passing app settings (incl. sentry)
+- Internationalisation (passing down i18n config)
+- Setting up .gitignore & environment variables
+- Setting up fonts / translations on development environment
+
 ## Additional info
 
 A similar setup with Single-SPA: https://gitlab.com/TheMcMurder/single-spa-portal-example/tree/master

@@ -4,26 +4,39 @@ import { subscribe } from './applications';
 
 const PatchworkComponent = ({ name, componentName = null, basePath, ...otherProps }) => {
   const ref = React.createRef();
-  const [savedUnmount, setUnmount] = useState(null);
+  const [isMounted, setMounted] = useState(false);
 
   useEffect(() => {
+    let savedUnmount = null;
+    let unsubscribe = null;
+    if (!isMounted) {
+      console.log('>>> Not mounted yet, let us call subscribe later');
+      setMounted(true);
+      return () => {
+        console.log('>>>> Useless clean up');
+      };
+    }
+    console.log('>>> Now mounted, ref is:', ref);
     const onLoad = ({ components = {}, ...app }) => {
       const component = componentName === null ? app : components[componentName];
       if (!component) return;
       const { mount, unmount } = component;
       console.log('>>>> calling ', name, componentName || '', 'MOUNT on', ref.current);
       mount(ref.current, basePath, otherProps);
-      setUnmount(unmount);
+      savedUnmount = unmount;
     };
-    const unsubscribe = subscribe(name, componentName, onLoad);
-    return async () => {
+    unsubscribe = subscribe(name, componentName, onLoad);
+    return () => {
       if (savedUnmount) {
         console.log('>>>> calling ', name, componentName || '', 'UNMOUNT on', ref.current);
-        await savedUnmount();
+        return savedUnmount()
+          .then(() => unsubscribe())
+          .catch(() => unsubscribe());
       }
       unsubscribe();
+      return undefined;
     };
-  }, [name, componentName]);
+  }, [name, componentName, isMounted]);
   return <div ref={ref} />;
 };
 
