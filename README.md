@@ -2,6 +2,8 @@
 
 Patchwork is a bootstrap library that supports our micro-frontends infrastructure.
 
+**This is a proof of concept and is not production ready in any way.**
+
 ## Usage
 
 ### Initializing a parent app.
