@@ -94,3 +94,7 @@ Things to consider:
 ## Additional info
 
 A similar setup with Single-SPA: https://gitlab.com/TheMcMurder/single-spa-portal-example/tree/master
+
+## License
+
+[Apache 2.0](./LICENSE)
